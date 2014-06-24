@@ -17,7 +17,7 @@ GET requests should use the following syntax:
 
 `http://domaintest.みんな/<command>?<parameter1>=<value1>&<paremeter2>=<value2>&...`
 
-POST requests can mix parameters between the query string, like GET, and the POST body. Both `multipart/form-data` and `application/x-www-form-urlencoded` are supported, and the `postpayload` param does not interpret the POST body at all.
+POST requests can mix parameters between the query string, like GET, and the POST body. Both `multipart/form-data` and `application/x-www-form-urlencoded` are supported, and the `postpayload` parameter does not interpret the POST body at all.
 
 ###ECHO
 The `echo` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
