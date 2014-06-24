@@ -63,7 +63,7 @@ If you’ve pre-generated a token prior to stashing a request, you can assign a 
 
 A single pre-generated token can be used an unlimited number of times within one hour of generation.
 
-###Email Testing API
+##Email Testing API
 The Email Testing API allows you to trigger an automatic email response from the Domain Test service, which enables you to determine whether an application’s email stack properly handles new TLDs. You can trigger an autoresponse by sending an email with a subject that begins with `Test` to `<local-part>@domaintest.みんな`, where `<local-part>` is any string:
 
 ```
