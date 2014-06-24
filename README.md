@@ -39,7 +39,7 @@ The request below will return a 302 redirect to `http://www.example.com/`.
 
 `http://domaintest.みんな/echo?status=302&payload=http://www.example.com/`
 
-The request below will return a 302 redirect to http://www.example.com/ after sleeping for 10 seconds.
+The request below will return a 302 redirect to `http://www.example.com/` after sleeping for 10 seconds.
 
 `http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/`
 
