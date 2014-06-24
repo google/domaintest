@@ -50,11 +50,11 @@ For example, the request below will stash the string 'stashed-narwhal'.
 
 `http://domaintest.みんな/stash?payload=stashed-narwhal`
 
-The Domain Test service responds to stash requests with a URL in the form below, which can be used later to retrieve the stashed response.
+The Domain Test service responds to stash requests with a temp URL in the form below, which can be used later to retrieve the stashed response.
 
 `http://domaintest.みんな/temp/<token>`
 
-A single `/temp` URL is available for use for 5 minutes after it's been generated, and it can be used once. Note that stashed data is stored in memory, and should be considered highly ephemeral. Under some circumstances it may be lost even before the stated expiration time, in which case you should simply re-stash and try again.
+A single temp URL is available for use for 5 minutes after it's been generated, and it can be used once. Note that stashed data is stored in memory and should be considered highly ephemeral. Under some circumstances it may be lost even before the stated expiration time, in which case you should re-stash and try again.
 
 ###TOKEN
 
