@@ -290,3 +290,6 @@ The Domain Test tool is available on the following TLDs, thanks to a partnership
 </tr>
 </tbody>
 </table>
+
+##HTTP Testing API
+Domain Test is an open source project available under the Apache 2 license. Use of the Domain Test service is subject to Google’s Terms of Service and Privacy Policy. [Learn more](https://www.google.com/intl/en/policies/). 
