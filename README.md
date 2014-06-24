@@ -23,7 +23,7 @@ POST requests can mix parameters between the query string, like GET, and the POS
 The `echo` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
 
   - `status=<integer>` determines the status code (default 200).
-  - `payload=<urlencoded text>` sets the body text or redirect url (default “”).
+  - `payload=<urlencoded text>` sets the body text or redirect url (default "").
   - `postpayload` is an alternative to `payload` that interprets the entire POST body as the payload.
   - `mime=<type>` determines the MIME type (default text/plain).
   - `sleep=<seconds>` causes a sleep before the response (default 0 sec, max 10 sec).
