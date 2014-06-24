@@ -74,3 +74,7 @@ Subject: Test ALL the autoresponders!
 The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject, `Automated testing service response`. (Although you can send the outbound email to any of the domains listed in the Domain Test TLDs section below, the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
 
 The email testing API is compliant with IDNA2008, but it does not support full email address internationalization as defined in RFCs 6530, 6531, and 6532. 
+
+##Domain Test TLDs
+The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
+
