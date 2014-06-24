@@ -78,3 +78,37 @@ The email testing API is compliant with IDNA2008, but it does not support full e
 ##Domain Test TLDs
 The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
 
+|                         |                        |                          |                       |
+|-------------------------|------------------------|--------------------------|-----------------------|
+| اختبارنطاق.شبكة         | domaintest.contractors | domaintest.graphics      | domaintest.repair     |
+| domaintest.みんな       | domaintest.cool        | domaintest.gripe         | domaintest.report     |
+| domaintest.academy      | domaintest.cruises     | domaintest.guitars       | domaintest.schule     |
+| domaintest.agency       | domaintest.dating      | domaintest.guru          | domaintest.services   |
+| domaintest.associates   | domaintest.dental      | domaintest.holdings      | domaintest.shoes      |
+| domaintest.bargains     | domaintest.diamonds    | domaintest.holiday       | domaintest.singles    |
+| domaintest.bike         | domaintest.directory   | domaintest.house         | domaintest.solar      |
+| domaintest.blackfriday  | domaintest.discount    | domaintest.institute     | domaintest.solutions  |
+| domaintest.boutique     | domaintest.domains     | domaintest.international | domaintest.support    |
+| domaintest.builders     | domaintest.education   | domaintest.investments   | domaintest.surgery    |
+| domaintest.cab          | domaintest.email       | domaintest.kitchen       | domaintest.systems    |
+| domaintest.camera       | domaintest.engineering | domaintest.land          | domaintest.tax        |
+| domaintest.camp         | domaintest.enterprises | domaintest.lease         | domaintest.technology |
+| domaintest.capital      | domaintest.equipment   | domaintest.lighting      | domaintest.tienda     |
+| domaintest.cards        | domaintest.estate      | domaintest.limited       | domaintest.tips       |
+| domaintest.care         | domaintest.events      | domaintest.limo          | domaintest.today      |
+| domaintest.careers      | domaintest.exchange    | domaintest.link          | domaintest.town       |
+| domaintest.cash         | domaintest.expert      | domaintest.maison        | domaintest.toys       |
+| domaintest.catering     | domaintest.exposed     | domaintest.management    | domaintest.training   |
+| domaintest.center       | domaintest.fail        | domaintest.marketing     | domaintest.university |
+| domaintest.cheap        | domaintest.farm        | domaintest.media         | domaintest.vacations  |
+| domaintest.christmas    | domaintest.financial   | domaintest.partners      | domaintest.ventures   |
+| domaintest.cleaning     | domaintest.fish        | domaintest.photography   | domaintest.viajes     |
+| domaintest.clinic       | domaintest.fitness     | domaintest.photos        | domaintest.villas     |
+| domaintest.clothing     | domaintest.flights     | domaintest.pics          | domaintest.vision     |
+| domaintest.codes        | domaintest.florist     | domaintest.pictures      | domaintest.voyage     |
+| domaintest.coffee       | domaintest.foo         | domaintest.plumbing      | domaintest.watch      |
+| domaintest.community    | domaintest.foundation  | domaintest.productions   | domaintest.works      |
+| domaintest.company      | domaintest.fund        | domaintest.properties    | domaintest.wtf        |
+| domaintest.computer     | domaintest.furniture   | domaintest.recipes       | domaintest.zone       |
+| domaintest.condos       | domaintest.gallery     | domaintest.reisen        |                       |
+| domaintest.construction | domaintest.glass       | domaintest.rentals       |                       |
