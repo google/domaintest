@@ -13,5 +13,17 @@ The Domain Test service runs on AppEngine and is available for any developer to 
 ##HTTP Testing API
 You can use the HTTP Testing API to construct an HTTP GET or POST request that results in a predictable server response. By observing the server’s response, you can determine whether the application making the HTTP call properly handled the domain name. 
 
-Requests should be formatted in the following syntax.
+Requests should use the following syntax.
+
 `http://domaintest.みんな/<command>?<parameter1>=<value1>&<paremeter2>=<value2>&...`
+
+###ECHO
+The **ECHO** command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
+
+  - status=<integer> determines the status code (default 200)
+  - payload=<urlencoded text> sets the body text or redirect url (default “”, max 10k)
+  - mime=<type> determines the MIME type (default text/plain)
+  - sleep=<seconds> causes a sleep before the response (default 0 sec, max 10 sec)
+  - header=<name=value> adds a header to the response
+  - setcookie=<name=value> sets a session-scoped cookie
+  - delcookie=<name> deletes a cookie
