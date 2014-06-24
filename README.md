@@ -1,4 +1,4 @@
-domaintest
-==========
+Domain Test
+===========
 
 Documentation coming soon!
