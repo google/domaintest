@@ -84,7 +84,7 @@ If the second word of the email subject is a token retrieved from the `/token` e
 
 `http://domaintest.みんな/temp/<token>`
 
-for 15 minutes, retrievable once. This helps with debugging whether an email reached the Domain Test service, even if the reply is somehow dropped.
+for 15 minutes and will be retrievable once. You can use this to determine whether an email reached the Domain Test service, even if you do not receive an autoresponse.
 
 ##Domain Test TLDs
 The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
