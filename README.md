@@ -76,7 +76,7 @@ To: narwhal@domaintest.みんな
 Subject: Test ALL the autoresponders! 
 ```
 
-The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject `Automated testing service response`. (Although you can send the outbound email to any of the domains listed in the Domain Test TLDs section below, the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
+The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject `Automated testing service response`. (Although you can send the outbound email to any address on `domaintest.みんな` the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
 
 The email testing API is compliant with IDNA2008, but it does not support full email address internationalization as defined in RFCs 6530, 6531, and 6532. 
 
@@ -85,6 +85,11 @@ If the second word of the email subject is a token retrieved from the `/token` e
 `http://domaintest.みんな/temp/<token>`
 
 for 15 minutes and will be retrievable once. You can use this to determine whether an email reached the Domain Test service, even if you do not receive an autoresponse.
+
+##Security Considerations
+By design, the Domain Test service is highly insecure. You should consider any data sent to the service to be public, and should not stash or email anything other than test data. It is trivial to execute arbitrary Javascript within the domaintest.みんな origin, both directly via `/echo` and stored via `/stash`, which is why it is crucial that there not be anything private within the same domain that is worth stealing. For this reason, there is no content other than the Domain Test service on the domains listed below.
+
+You should think very carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, due to the possibility of stored XSS attacks that can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that domain name will *always* be vulnerable from a security perspective, and should prevent you from reusing that domain for any non-testing purposes even in the future.
 
 ##Domain Test TLDs
 The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
