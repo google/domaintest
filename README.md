@@ -13,15 +13,18 @@ The Domain Test service runs on AppEngine and is available for any developer to 
 ##HTTP Testing API
 You can use the HTTP Testing API to construct an HTTP GET or POST request that results in a predictable server response. By observing the server’s response, you can determine whether the application making the HTTP call properly handled the domain name. 
 
-Requests should use the following syntax.
+GET requests should use the following syntax:
 
 `http://domaintest.みんな/<command>?<parameter1>=<value1>&<paremeter2>=<value2>&...`
+
+POST requests can mix parameters between the query string, like GET, and the POST body. Both `multipart/form-data` and `application/x-www-form-urlencoded` are supported, and the `postpayload` param does not interpret the POST body at all.
 
 ###ECHO
 The `echo` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
 
   - `status=<integer>` determines the status code (default 200)
-  - `payload=<urlencoded text>` sets the body text or redirect url (default “”, max 10k)
+  - `payload=<urlencoded text>` sets the body text or redirect url (default “”)
+  - `postpayload` is an alternative to `payload` that interprets the entire POST body as the payload
   - `mime=<type>` determines the MIME type (default text/plain)
   - `sleep=<seconds>` causes a sleep before the response (default 0 sec, max 10 sec)
   - `header=<name=value>` adds a header to the response
@@ -41,7 +44,7 @@ The request below will return a 302 redirect to http://www.example.com/ after sl
 `http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/`
 
 ###STASH
-The `stash` command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `echo` command.
+The `stash` command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `echo` command. A stashed payload is truncated after 10K.
 
 For example, the request below will stash the string 'stashed-narwhal'.
 
@@ -51,7 +54,9 @@ The Domain Test service responds to stash requests with a URL in the form below,
 
 `http://domaintest.みんな/temp/<token>`
 
-A single token URL is available for use for 5 minutes after it's been generated, and it can be used once.
+A single `/temp` URL is available for use for 5 minutes after it's been generated, and it can be used once.
+
+###TOKEN
 
 Alternatively, you can use the URL below if you want to pre-generate a token *before* stashing:
 
@@ -64,7 +69,7 @@ If you’ve pre-generated a token prior to stashing a request, you can assign a 
 A single pre-generated token can be used an unlimited number of times within one hour of generation.
 
 ##Email Testing API
-The Email Testing API allows you to trigger an automatic email response from the Domain Test service, which enables you to determine whether an application’s email stack properly handles new TLDs. You can trigger an autoresponse by sending an email with a subject that begins with `Test` to `<local-part>@domaintest.みんな`, where `<local-part>` is any string:
+The Email Testing API allows you to trigger an automatic email response from the Domain Test service, which enables you to determine whether an application’s email stack properly handles new TLDs. You can trigger an autoresponse by sending an email with a subject that begins with the word `Test` to `<local-part>@domaintest.みんな`, where `<local-part>` is any string:
 
 ```
 To: narwhal@domaintest.みんな
@@ -74,6 +79,12 @@ Subject: Test ALL the autoresponders!
 The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject, `Automated testing service response`. (Although you can send the outbound email to any of the domains listed in the Domain Test TLDs section below, the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
 
 The email testing API is compliant with IDNA2008, but it does not support full email address internationalization as defined in RFCs 6530, 6531, and 6532. 
+
+If the second word of the email subject is a token retrieved from the `/token` endpoint, the headers (but not body) of the incoming email will be stashed at 
+
+`http://domaintest.みんな/temp/<token>`
+
+for 15 minutes, retrievable once. This helps with debugging whether an email reached the Domain Test service, even if the reply is somehow dropped.
 
 ##Domain Test TLDs
 The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
