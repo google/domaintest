@@ -62,3 +62,15 @@ If you’ve pre-generated a token prior to stashing a request, you can assign a 
 `http://domaintest.みんな/stash?token=<pre-generated_token>`
 
 A single pre-generated token can be used an unlimited number of times within one hour of generation.
+
+###Email Testing API
+The Email Testing API allows you to trigger an automatic email response from the Domain Test service, which enables you to determine whether an application’s email stack properly handles new TLDs. You can trigger an autoresponse by sending an email with a subject that begins with `Test` to `<local-part>@domaintest.みんな`, where `<local-part>` is any string:
+
+```
+To: narwhal@domaintest.みんな
+Subject: Test ALL the autoresponders! 
+```
+
+The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject, `Automated testing service response`. (Although you can send the outbound email to any of the domains listed in the Domain Test TLDs section below, the autoresponse will always be sent from tester@domaintest.みんな TLD.) The autoresponder respects a Reply-To header, if present.
+
+The email testing API is compliant with IDNA2008, but it does not support full email address internationalization as defined in RFCs 6530, 6531, and 6532. 
