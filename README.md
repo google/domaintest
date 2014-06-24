@@ -18,7 +18,7 @@ Requests should use the following syntax.
 `http://domaintest.みんな/<command>?<parameter1>=<value1>&<paremeter2>=<value2>&...`
 
 ###ECHO
-The `ECHO` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
+The `echo` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
 
   - `status=<integer>` determines the status code (default 200)
   - `payload=<urlencoded text>` sets the body text or redirect url (default “”, max 10k)
@@ -41,7 +41,7 @@ The request below will return a 302 redirect to http://www.example.com/ after sl
 `http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/`
 
 ###STASH
-The `STASH` command command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `ECHO` command.
+The `stash` command command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `ECHO` command.
 
 For example, the request below will stash the string `stashed-narwhal`.
 
