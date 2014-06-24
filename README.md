@@ -54,7 +54,7 @@ The Domain Test service responds to stash requests with a URL in the form below,
 
 `http://domaintest.みんな/temp/<token>`
 
-A single `/temp` URL is available for use for 5 minutes after it's been generated, and it can be used once.
+A single `/temp` URL is available for use for 5 minutes after it's been generated, and it can be used once. Note that stashed data is stored in memory, and should be considered highly ephemeral. Under some circumstances it may be lost even before the stated expiration time, in which case you should simply re-stash and try again.
 
 ###TOKEN
 
