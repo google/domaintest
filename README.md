@@ -41,13 +41,13 @@ The request below will return a 302 redirect to http://www.example.com/ after sl
 `http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/`
 
 ###STASH
-The `stash` command command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `ECHO` command.
+The `stash` command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `echo` command.
 
-For example, the request below will stash the string `stashed-narwhal`.
+For example, the request below will stash the string 'stashed-narwhal'.
 
 `http://domaintest.みんな/stash?payload=stashed-narwhal`
 
-The Domain Test service responds to STASH requests with a URL in the form below, which can be used to retrieve the stashed response. 
+The Domain Test service responds to stash requests with a URL in the form below, which can be used later to retrieve the stashed response.
 
 `http://domaintest.みんな/temp/<token>`
 
@@ -57,7 +57,7 @@ Alternatively, you can use the URL below if you want to pre-generate a token *be
 
 `http://domaintest.みんな/token`
 
-If you’ve pre-generated a token prior to stashing a request, you can assign a STASH command to your pre-generated token using the `<token>` parameter:
+If you’ve pre-generated a token prior to stashing a request, you can assign a stash command to your pre-generated token using the `<token>` parameter:
 
 `http://domaintest.みんな/stash?token=<pre-generated_token>`
 
