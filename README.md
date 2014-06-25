@@ -34,22 +34,22 @@ The `echo` command instructs the Domain Test service to echo a response based on
 
 For example, the request below will return the string `echoed-narwhal`.
 
-`http://domaintest.みんな/echo?payload=echoed-narwhal`
+<http://domaintest.みんな/echo?payload=echoed-narwhal>
 
 The request below will return a 302 redirect to `http://www.example.com/`.
 
-`http://domaintest.みんな/echo?status=302&payload=http://www.example.com/`
+<http://domaintest.みんな/echo?status=302&payload=http://www.example.com/>
 
 The request below will return a 302 redirect to `http://www.example.com/` after sleeping for 10 seconds.
 
-`http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/`
+<http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/>
 
 ###STASH
 The `stash` command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `echo` command. A stashed payload is truncated after 10K.
 
 For example, the request below will stash the string 'stashed-narwhal'.
 
-`http://domaintest.みんな/stash?payload=stashed-narwhal`
+<http://domaintest.みんな/stash?payload=stashed-narwhal>
 
 The Domain Test service responds to stash requests with a temp URL in the form below, which can be used later to retrieve the stashed response.
 
@@ -61,7 +61,7 @@ A single temp URL is available for use for 5 minutes after it's been generated, 
 
 Alternatively, you can use the URL below if you want to pre-generate a token *before* stashing:
 
-`http://domaintest.みんな/token`
+<http://domaintest.みんな/token>
 
 If you’ve pre-generated a token prior to stashing a request, you can assign a stash command to your pre-generated token using the `token` parameter:
 
@@ -98,7 +98,7 @@ You should think very carefully before running the service on your own domain, s
 
 Suppose you’ve developed an RSS reader and want to know whether it’ll work with feeds that are served off of an internationalized TLD. You can use the Domain Test API to craft a URL that returns an RSS feed. Here's an example using GET:
 
-`http://domaintest.みんな/echo?payload=http://domaintest.xn--q9jyb4c/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E`
+<http://domaintest.みんな/echo?payload=http://domaintest.xn--q9jyb4c/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E>
 
 although in practice it may be easier to prepare a smaller URL by using `/stash` with the `postpayload` parameter.
 
@@ -122,17 +122,17 @@ By combining the various parameters of `/stash` and `/echo` you can make the Dom
 
 #####Set a cookie using the unicode form of .みんな and verify that it's served on the `xn--q9jyb4c` ASCII version too.
 
-`http://domaintest.みんな/echo?addcookie=foo=bar&letyoudown=occasionally`
+<http://domaintest.みんな/echo?addcookie=foo=bar&letyoudown=occasionally>
 
-`http://domaintest.xn--q9jyb4c/echo?payload=%3Cscript%3Ealert(document.cookie)%3C/script%3E&mime=text/html&giveyouup=sometimes`
+<http://domaintest.xn--q9jyb4c/echo?payload=%3Cscript%3Ealert(document.cookie)%3C/script%3E&mime=text/html&giveyouup=sometimes>
 
 #####Make the server present an HTTP Basic Auth challenge.
 
-`http://domaintest.みんな/echo?header=WWW-Authenticate=Basic+realm=%22foo%22&status=401&blend=no`
+<http://domaintest.みんな/echo?header=WWW-Authenticate=Basic+realm=%22foo%22&status=401&blend=no>
 
 #####Get `echo` to serve a downloadable attachment.
 
-`http://domaintest.wtf/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less`
+<http://domaintest.wtf/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less>
 
 
 ##Discussion
