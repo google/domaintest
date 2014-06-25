@@ -93,6 +93,9 @@ By design, the Domain Test service is highly insecure. You should consider any d
 
 You should think very carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, due to the possibility of stored XSS attacks that can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that domain name will *always* be vulnerable from a security perspective, and should prevent you from reusing that domain for any non-testing purposes even in the future.
 
+##Discussion
+The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
+
 ##Domain Test TLDs
 The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
 
