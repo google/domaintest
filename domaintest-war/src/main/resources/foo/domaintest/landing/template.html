@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>.{{TLD}} Domain Test service</title>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+  <style>
+    body {
+      background: #4285F4;
+      font-family: "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    a {
+      color: white;
+    }
+    p {
+      margin: 0;
+    }
+    #tld {
+      font-size: 600%;
+    }
+    #hidden {
+      visibility: hidden;
+    }
+    #project {
+      font-size: 200%;
+    }
+    #main {
+      color: white;
+      text-align: center;
+      width: 100%;
+      height: 20em;
+      position: absolute;
+      margin-top: -10em;
+      top: 50%;
+    }
+    #terms {
+      font-size: 75%;
+      margin-top: 4em;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="tld">.{{TLD}}<span id='hidden'>.</span></div>
+    <div id="project">Domain Test</div>
+    <div id="about">
+      <p>gTLD testing service
+      <p><a href="https://github.com/google/domaintest/blob/master/README.md">Documentation</a> |
+         <a href="https://github.com/google/domaintest">Source</a>
+      <p id="terms">Use of this service is subject to Google’s Terms of Service and Privacy Policy.
+      <a href="https://www.google.com/intl/en/policies/">Learn more</a>.</p>
+    </div>
+  </div>
+</body>
+</html>

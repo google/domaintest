@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>domaintest</application>
+  <version>1</version>
+  <threadsafe>true</threadsafe>
+  <system-properties>
+    <property name="foo.domaintest.sourceurl" value="https://github.com/google/domaintest"/>
+    <property name="foo.domaintest.sendgriduser" value="FILL_IN_SENDGRID_USER"/>
+    <property name="foo.domaintest.sendgridkey" value="FILL_IN_SENDGRID_KEY"/>
+    <property name="foo.domaintest.autoreplykey" value="FILL_IN_RANDOM_STRING"/>
+  </system-properties>
+  <static-files>
+    <include path="/favicon.ico" />
+  </static-files>
+</appengine-web-app>

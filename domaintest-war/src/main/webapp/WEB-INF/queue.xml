@@ -1,0 +1,11 @@
+<queue-entries>
+  <queue>
+    <name>default</name>
+    <rate>100/s</rate>
+    <bucket-size>100</bucket-size>
+    <retry-parameters>
+      <min-backoff-seconds>5</min-backoff-seconds>
+      <task-retry-limit>3</task-retry-limit>
+    </retry-parameters>
+  </queue>
+</queue-entries>

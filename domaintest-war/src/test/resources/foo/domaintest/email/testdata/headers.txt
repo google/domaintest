@@ -1,0 +1,14 @@
+Received: by some.sendgrid.server with SMTP id foobarbaz Tue, 10 Jun 2014 00:00:00 +0000 (GMT)
+Received: from some.google.server (some.other.google.server [192.168.0.1]) by some.sendgrid.server (Postfix) with ESMTPS id barbazqux for <recipient@testing.example>; Tue, 10 Jun 2014 00:00:00 +0000 (GMT)
+Received: by some.google.server with SMTP id someserverid.15 for <recipient@testing.example>; Mon, 09 Jun 2014 00:00:00 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 192.168.0.1 with HTTP; Mon, 9 Jun 2014 00:00:00 -0700 (PDT)
+From: Developer Person <developer@example.com>
+Date: Mon, 9 Jun 2014 00:00:00 -0400
+Subject: test this thing!
+To: recipient@testing.example
+Reply-To: alternative@example.com
+Content-Type: multipart/alternative; boundary=something
+References: <references-id>
+In-Reply-To: <in-reply-to-id>
+Message-Id: <message-id>
