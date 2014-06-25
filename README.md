@@ -19,6 +19,8 @@ GET requests should use the following syntax:
 
 POST requests can mix parameters between the query string, like GET, and the POST body. Both `multipart/form-data` and `application/x-www-form-urlencoded` are supported, and the `postpayload` parameter does not interpret the POST body at all.
 
+The HTTP Testing API supports Cross-Origin Resource Sharing on all requests, including support for preflight. This means that you can test AJAX requests to new TLDs from JavaScript running on any page.
+
 ###ECHO
 The `echo` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
 
