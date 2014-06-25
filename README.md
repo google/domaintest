@@ -64,7 +64,7 @@ Alternatively, you can use the URL below if you want to pre-generate a token *be
 
 `http://domaintest.みんな/token`
 
-If you’ve pre-generated a token prior to stashing a request, you can assign a stash command to your pre-generated token using the `<token>` parameter:
+If you’ve pre-generated a token prior to stashing a request, you can assign a stash command to your pre-generated token using the `token` parameter:
 
 `http://domaintest.みんな/stash?token=<pre-generated_token>`
 
