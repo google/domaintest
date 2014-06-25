@@ -3,14 +3,14 @@
 ##Overview
 Domain Test is a tool designed to help developers test their applications for compatibility with new top-level domains (TLDs). Developed by Google and launched in a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry, Domain Test is an open source project available under the Apache 2 license and can be used across 126 new TLDs. It is freely available for use and modification.
 
-In 2011, the Internet Committee for Assigned Names and Numbers (ICANN) approved a new gTLD program, where applicants could apply to own and operate new gTLDs. A total of 1,930 applications were filed, and beginning in 2013, ICANN began delegating new gTLDs to the root zone. These gTLDs have a series of characteristics, such as string length and the use of non-Latin scripts, that can cause bugs in software. Domain Test helps developers identify and fix these problems.
+In 2011, the Internet Committee for Assigned Names and Numbers (ICANN) approved a new gTLD program, where applicants could apply to own and operate new gTLDs. A total of 1,930 applications were filed, and beginning in 2013, ICANN began delegating new gTLDs to the root DNS zone. These gTLDs have a series of characteristics, such as string length and the use of non-Latin scripts, that can cause bugs in software. Domain Test helps developers identify and fix these problems.
 
 This repository contains the documentation and code for Domain Test. For clarity, the documentation uses the term “new TLDs” to refer to the universe of new generic top-level domains (gTLDs), new country-code top-level domains (ccTLDs), and internationalized domain names (IDNs). 
 
 The Domain Test service runs on AppEngine and is available for any developer to use. The syntax examples in this documentation use the `domaintest.みんな` domain name. However, depending on what type of new TLD you want to test, you can substitute any of the strings in the **Domain Test TLDs** section of this documentation.
 
 ##HTTP Testing API
-You can use the HTTP Testing API to construct an HTTP GET or POST request that results in a predictable server response. By observing the server’s response, you can determine whether the application making the HTTP call properly handled the domain name. 
+You can use the HTTP Testing API to construct an HTTP GET or POST request that results in a predictable server response. By observing your application's handling of the server’s response, you can determine whether the application making the HTTP call works properly with new TLDs. 
 
 GET requests should use the following syntax:
 
@@ -77,7 +77,7 @@ To: narwhal@domaintest.みんな
 Subject: Test ALL the autoresponders! 
 ```
 
-The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject `Automated testing service response`. (Although you can send the outbound email to any address on `domaintest.みんな` the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
+The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject `Automated testing service response`. (Although you can send the outbound email to any address at `domaintest.みんな` the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
 
 The email testing API is compliant with IDNA2008, but it does not support full email address internationalization as defined in RFCs 6530, 6531, and 6532. 
 
@@ -88,39 +88,39 @@ If the second word of the email subject is a token retrieved from the `/token` e
 for 15 minutes and will be retrievable once. You can use this to determine whether an email reached the Domain Test service, even if you do not receive an autoresponse.
 
 ##Security Considerations
-By design, the Domain Test service is highly insecure. You should consider any data sent to the service to be public, and should not stash or email anything other than test data. It is trivial to execute arbitrary Javascript within the domaintest.みんな origin, both directly via `/echo` and stored via `/stash`, which is why it is crucial that there not be anything private within the same domain that is worth stealing. For this reason, there is no content other than the Domain Test service on the domains listed below.
+By design, the Domain Test service is highly insecure. You should consider any data sent to the service to be public and should not stash or email anything other than test data. It is trivial to execute arbitrary JavaScript within the `domaintest.みんな` origin, both directly via `/echo` and stored via `/stash`, so it is crucial that there not be anything private within the same domain that is worth stealing. For this reason, there is no content on the domains listed below other than the Domain Test service.
 
-You should think very carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, due to the possibility of stored XSS attacks that can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that domain name will *always* be vulnerable from a security perspective, and should prevent you from reusing that domain for any non-testing purposes even in the future.
+You should think carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, since stored XSS attacks can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that domain name in question will *always* be vulnerable from a security perspective. You should not reuse a domain that is running Domain Test for any non-testing purpose, even in the future.
 
 ##Examples
 
 ###Testing Client Software
 
-Suppose you’ve developed an RSS reader and want to know whether it’ll work with feeds that are served off of an internationalized TLD. You can use the Domain Test API to craft a URL that returns an RSS feed. Here's an example using GET:
+Suppose you’ve developed an RSS reader and want to know whether it’ll work with feeds that are served off of a new TLD. You can use the HTTP Testing API to craft a URL that returns an RSS feed. Here's an example using GET:
 
-<http://domaintest.みんな/echo?payload=http://domaintest.xn--q9jyb4c/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E>
+`<http://domaintest.みんな/echo?payload=http://domaintest.xn--q9jyb4c/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E>`
 
-although in practice it may be easier to prepare a smaller URL by using `/stash` with the `postpayload` parameter.
+(In practice, it may be easier to prepare a smaller URL by using `/stash` with the `postpayload` parameter.)
 
-You can take this URL and plug it into your app. If your app works properly --- the RSS feed loads and renders the みんな TLD --- then you can be reasonably confident that your app properly handles internationalized top-level domains. If not, you’ve found a bug! 
+You can take this URL and plug it into your app. If your app works properly --- the RSS feed loads and renders the `みんな` TLD --- then you can be reasonably confident that your app properly handles this type of new TLD. If not, you’ve found a bug! 
 
 ###Testing Webhooks
 
-You can use the `/stash` endpoint to test webhooks. Suppose you are testing a service that posts the weather to a URL of your choosing every few minutes. You can go to the `/token` endpoint on domaintest.みんな and get a token that you can use with `/stash`. Then you give the service a URL that looks like this:
+You can use the `/stash` endpoint to test webhooks. Suppose you are testing a service that posts the weather to a URL of your choosing every few minutes. You can go to the `/token` endpoint on domaintest.みんな and get a token that you can use with `/stash`. Then you give the weather service a URL that looks like this:
 
 `http://domaintest.みんな/stash?token=<token>&postpayload`
 
-This will cause the Domain Test server to save whatever gets POST'ed to this URL and make it available here:
+This will cause the Domain Test server to save whatever gets POSTed to this URL and make it available here:
 
 `http://domaintest.みんな/temp/<token>`
 
-You can then poll this URL until there is something there to see. If the service successfully posted the weather to this internationalized TLD's "webhook" then you will be able to see it. If nothing ever shows up even after the weather should have been sent, you've probably found a bug!
+You can then poll this URL until there is something there to see. If the service successfully posted the weather to this new TLD's "webhook" then you will be able to see it. If nothing shows up, even after the weather should have been sent, you've probably found a bug!
 
 ###Other Things to Try
 
-By combining the various parameters of `/stash` and `/echo` you can make the Domain Test service mimic almost any kind of server. Here are some things to try:
+By combining the various parameters of `/stash` and `/echo`, you can make the Domain Test service mimic almost any kind of server. Here are some things to try:
 
-#####Set a cookie using the unicode form of .みんな and verify that it's served on the `xn--q9jyb4c` ASCII version too.
+#####Set a cookie using the unicode form of `.みんな` and verify that it's served on the `xn--q9jyb4c` ASCII version too.
 
 <http://domaintest.みんな/echo?addcookie=foo=bar&letyoudown=occasionally>
 
