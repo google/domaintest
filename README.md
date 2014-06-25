@@ -7,7 +7,7 @@ In 2011, the Internet Committee for Assigned Names and Numbers (ICANN) approved 
 
 This repository contains the documentation and code for Domain Test. For clarity, the documentation uses the term “new TLDs” to refer to the universe of new generic top-level domains (gTLDs), new country-code top-level domains (ccTLDs), and internationalized domain names (IDNs). 
 
-The Domain Test service runs on AppEngine and is available for any developer to use. The syntax examples in this documentation use the `domaintest.みんな` domain name. However, depending on what type of new TLD you want to test, you can substitute any of the strings in the **Domain Test TLDs** section of this documentation.
+The Domain Test service runs on AppEngine and is available for any developer to use. The syntax examples in this documentation use the `domaintest.みんな` domain name. However, depending on what type of new TLD you want to test, you can substitute any of the strings in the [Domain Test TLDs](#domain-test-tlds) section of this documentation.
 
 ##HTTP Testing API
 You can use the HTTP Testing API to construct an HTTP GET or POST request that results in a predictable server response. By observing your application's handling of the server’s response, you can determine whether the application making the HTTP call works properly with new TLDs. 
