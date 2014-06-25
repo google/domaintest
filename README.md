@@ -132,7 +132,7 @@ By combining the various parameters of `/stash` and `/echo`, you can make the Do
 
 #####Get `echo` to serve a downloadable attachment.
 
-<http://domaintest.wtf/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less>
+<http://domaintest.みんな/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less>
 
 
 ##Discussion
