@@ -92,6 +92,49 @@ By design, the Domain Test service is highly insecure. You should consider any d
 
 You should think very carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, due to the possibility of stored XSS attacks that can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that domain name will *always* be vulnerable from a security perspective, and should prevent you from reusing that domain for any non-testing purposes even in the future.
 
+##Examples
+
+###Testing Client Software
+
+Suppose you’ve developed an RSS reader and want to know whether it’ll work with feeds that are served off of an internationalized TLD. You can use the Domain Test API to craft a URL that returns an RSS feed. Here's an example using GET:
+
+`http://domaintest.みんな/echo?payload=http://domaintest.xn--q9jyb4c/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E`
+
+although in practice it may be easier to prepare a smaller URL by using `/stash` with the `postpayload` parameter.
+
+You can take this URL and plug it into your app. If your app works properly --- the RSS feed loads and renders the みんな TLD --- then you can be reasonably confident that your app properly handles internationalized top-level domains. If not, you’ve found a bug! 
+
+###Testing Webhooks
+
+You can use the `/stash` endpoint to test webhooks. Suppose you are testing a service that posts the weather to a URL of your choosing every few minutes. You can go to the `/token` endpoint on domaintest.みんな and get a token that you can use with `/stash`. Then you give the service a URL that looks like this:
+
+`http://domaintest.みんな/stash?token=<token>&postpayload`
+
+This will cause the Domain Test server to save whatever gets POST'ed to this URL and make it available here:
+
+`http://domaintest.みんな/temp/<token>`
+
+You can then poll this URL until there is something there to see. If the service successfully posted the weather to this internationalized TLD's "webhook" then you will be able to see it. If nothing ever shows up even after the weather should have been sent, you've probably found a bug!
+
+###Other Things to Try
+
+By combining the various parameters of `/stash` and `/echo` you can make the Domain Test service mimic almost any kind of server. Here are some things to try:
+
+#####Set a cookie using the unicode form of .みんな and verify that it's served on the `xn--q9jyb4c` ASCII version too.
+
+`http://domaintest.みんな/echo?addcookie=foo=bar&letyoudown=occasionally`
+
+`http://domaintest.xn--q9jyb4c/echo?payload=%3Cscript%3Ealert(document.cookie)%3C/script%3E&mime=text/html&giveyouup=sometimes`
+
+#####Make the server present an HTTP Basic Auth challenge.
+
+`http://domaintest.みんな/echo?header=WWW-Authenticate=Basic+realm=%22foo%22&status=401&blend=no`
+
+#####Get `echo` to serve a downloadable attachment.
+
+`http://domaintest.wtf/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less`
+
+
 ##Discussion
 The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
 
