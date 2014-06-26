@@ -90,7 +90,7 @@ for 15 minutes and will be retrievable once. You can use this to determine wheth
 ##Security Considerations
 By design, the Domain Test service is highly insecure. You should consider any data sent to the service to be public and should not stash or email anything other than test data. It is trivial to execute arbitrary JavaScript within the `domaintest.みんな` origin, both directly via `/echo` and stored via `/stash`, so it is crucial that there not be anything private within the same domain that is worth stealing. For this reason, there is no content on the domains listed below other than the Domain Test service.
 
-You should think carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, since stored XSS attacks can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that domain name in question will *always* be vulnerable from a security perspective. You should not reuse a domain that is running Domain Test for any non-testing purpose, even in the future.
+You should think carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, since stored XSS attacks can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that the domain name in question will *always* be vulnerable from a security perspective. You should not reuse a domain that is running Domain Test for any non-testing purpose, even in the future.
 
 ##Examples
 
