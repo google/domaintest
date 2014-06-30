@@ -1,6 +1,6 @@
 #Domain Test
 
-**Note**: In the links throughout this documentation, we use the internationalized domain name `domaintest.みんな`. GitHub improperly encodes this as `domaintest.%E3%81%BF%E3%82%93%E3%81%AA`. Domain names should not be URL-encoded. (This is exactly the type of issue that the Domain Test tool is intended to catch.)
+**Note**: In the links throughout this documentation, we use the internationalized domain name `domaintest.みんな`. In links, GitHub improperly encodes this as `domaintest.%E3%81%BF%E3%82%93%E3%81%AA`. Domain names should not be URL-encoded. (This is exactly the type of issue that the Domain Test tool is intended to catch.)
 
 This bug breaks the hyperlinks in this documentation for users of Firefox, Internet Explorer, and Safari; we've reported the issue to GitHub. In the meantime, affected users can test the examples by copying and pasting the on-screen text.
 
