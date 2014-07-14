@@ -5,7 +5,7 @@
 This bug breaks the hyperlinks in this documentation for users of Firefox, Internet Explorer, and Safari; we've reported the issue to GitHub. In the meantime, affected users can test the examples by copying and pasting the on-screen text.
 
 ##Overview
-Domain Test is a tool designed to help developers test their applications for compatibility with new top-level domains (TLDs). Developed by Google and launched in a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry, Domain Test is an open source project available under the Apache 2 license and can be used across 126 new TLDs. It is freely available for use and modification.
+Domain Test is a tool designed to help developers test their applications for compatibility with new top-level domains (TLDs). Developed by Google and launched in a partnership between GGoogle Registry and Ausregisdtry, CentralNic, Donuts Inc, RightSide, and Uniregistry, Domain Test is an open source project available under the Apache 2 license and can be used across 126 new TLDs. It is freely available for use and modification.
 
 
 In 2011, the Internet Committee for Assigned Names and Numbers (ICANN) approved a new gTLD program, where applicants could apply to own and operate new gTLDs. A total of 1,930 applications were filed, and beginning in 2013, ICANN began delegating new gTLDs to the root DNS zone. These gTLDs have a series of characteristics, such as string length and the use of non-Latin scripts, that can cause bugs in software. Domain Test helps developers identify and fix these problems.
@@ -145,7 +145,7 @@ By combining the various parameters of `/stash` and `/echo`, you can make the Do
 The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
 
 ##Domain Test TLDs
-The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry, Donuts Inc, Uniregistry, and Ausregistry.
+The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry and Ausregisdtry, CentralNic, Donuts Inc, RightSide, and Uniregistry.
 
 <table>
 <tbody>
