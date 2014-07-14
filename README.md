@@ -184,6 +184,17 @@ The Domain Test tool is available on the following TLDs, thanks to a partnership
 <tr><td>domaintest.consulting</td><td>domaintest.kaufen</td><td>domaintest.university</td></tr>
 <tr><td>domaintest.contractors</td><td>domaintest.kitchen</td><td>domaintest.vacations</td></tr>
 <tr><td>domaintest.cool</td><td>domaintest.land</td><td>domaintest.ventures</td></tr>
+<tr><td>domaintest.cruises</td><td>domaintest.lease</td><td>domaintest.viajes</td></tr>
+<tr><td>domaintest.dance</td><td>domaintest.lighting</td><td>domaintest.villas</td></tr>
+<tr><td>domaintest.dating</td><td>domaintest.limited</td><td>domaintest.vision</td></tr>
+<tr><td>domaintest.democrat</td><td>domaintest.limo</td><td>domaintest.voyage</td></tr>
+<tr><td>domaintest.dental</td><td>domaintest.link</td><td>domaintest.watch</td></tr>
+<tr><td>domaintest.diamonds</td><td>domaintest.maison</td><td>domaintest.wiki</td></tr>
+<tr><td>domaintest.directory</td><td>domaintest.management</td><td>domaintest.works</td></tr>
+<tr><td>domaintest.discount</td><td>domaintest.marketing</td><td>domaintest.wtf</td></tr>
+<tr><td>domaintest.domains</td><td>domaintest.media</td><td>domaintest.xyz</td></tr>
+<tr><td>domaintest.education</td><td>domaintest.moda</td><td>domaintest.zone</td></tr>
+<tr><td>domaintest.email</td><td>domaintest.ninja</td><td></td></tr>
 </tbody></table>
 
 ##Legal
