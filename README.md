@@ -103,7 +103,7 @@ You should think carefully before running the service on your own domain, since 
 
 Suppose you’ve developed an RSS reader and want to know whether it’ll work with feeds that are served off of a new TLD. You can use the HTTP Testing API to craft a URL that returns an RSS feed. Here's an example using GET:
 
-<http://domaintest.みんな/echo?payload=http://domaintest.xn--q9jyb4c/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E>
+<http://domaintest.みんな/echo?payload=%3C?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Crss%20version=%222.0%22%3E%3Cchannel%3E%3Ctitle%3EItem%201%3C/title%3E%3Clink%3Ehttp://www.example.com/item1%3C/link%3E%3Cdescription%3EItem%201%20-%20Testing%20TLDs%3C/description%3E%3Citem%3Eitle%3EItem%202%3C/title%3E%3Clink%3Ehttp://www.example.com/item2%3C/link%3E%3Cdescription%3EItem%202%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3Citem%3E%3Ctitle%3EXML%20Tutorial%3C/title%3E%20%3Clink%3Ehttp://www.example.com/item3%3C/link%3E%3Cdescription%3EItem%203%20-%20Testing%20TLDs%3C/description%3E%3C/item%3E%3C/channel%3E%3C/rss%3E>
 
 
 (In practice, it may be easier to prepare a smaller URL by using `/stash` with the `postpayload` parameter.)
