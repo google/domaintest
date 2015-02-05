@@ -150,8 +150,12 @@ The Domain Test tool is available on the following TLDs, thanks to a partnership
 domaintest.academy  
 domaintest.actor  
 domaintest.agency  
+domaintest.airforce  
+domaintest.army  
 domaintest.associates  
 domaintest.attorney  
+domaintest.auction  
+domaintest.band  
 domaintest.bar  
 domaintest.bargains  
 domaintest.bike  
@@ -186,14 +190,17 @@ domaintest.cool
 domaintest.cruises  
 domaintest.dance  
 domaintest.dating  
+domaintest.degree  
 domaintest.democrat  
 domaintest.dental  
+domaintest.dentist  
 domaintest.diamonds  
 domaintest.directory  
 domaintest.discount  
 domaintest.domains  
 domaintest.education  
 domaintest.email  
+domaintest.engineer  
 domaintest.engineering  
 domaintest.enterprises  
 domaintest.equipment  
@@ -210,11 +217,13 @@ domaintest.fitness
 domaintest.flights  
 domaintest.florist  
 domaintest.foo  
+domaintest.forsale  
 domaintest.foundation  
 domaintest.fund  
 domaintest.furniture  
 domaintest.futbol  
 domaintest.gallery  
+domaintest.gives  
 domaintest.glass  
 domaintest.graphics  
 domaintest.gripe  
@@ -241,9 +250,12 @@ domaintest.limo
 domaintest.link  
 domaintest.maison  
 domaintest.management  
+domaintest.market  
 domaintest.marketing  
 domaintest.media  
 domaintest.moda  
+domaintest.mortgage  
+domaintest.navy  
 domaintest.ninja  
 domaintest.partners  
 domaintest.photography  
@@ -256,6 +268,7 @@ domaintest.productions
 domaintest.properties  
 domaintest.pub  
 domaintest.recipes  
+domaintest.rehab  
 domaintest.reisen  
 domaintest.rentals  
 domaintest.repair  
@@ -263,12 +276,14 @@ domaintest.report
 domaintest.republican  
 domaintest.rest  
 domaintest.reviews  
+domaintest.rip  
 domaintest.rocks  
 domaintest.schule  
 domaintest.services  
 domaintest.shoes  
 domaintest.singles  
 domaintest.social  
+domaintest.software  
 domaintest.solar  
 domaintest.solutions  
 domaintest.support  
@@ -285,6 +300,7 @@ domaintest.training
 domaintest.university  
 domaintest.vacations  
 domaintest.ventures  
+domaintest.vet  
 domaintest.viajes  
 domaintest.villas  
 domaintest.vision  
@@ -297,7 +313,6 @@ domaintest.wtf
 domaintest.xyz  
 domaintest.zone  
 domaintest.みんな  
-اختبارنطاق.شبكةة    شبكةة  
-
+اختبارنطاق.شبكة  
 ##Legal
 Domain Test is an open source project available under the Apache 2 license. Use of the Domain Test service is subject to Google’s Terms of Service and Privacy Policy. [Learn more](https://www.google.com/intl/en/policies/). 
