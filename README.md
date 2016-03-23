@@ -145,7 +145,7 @@ By combining the various parameters of `/stash` and `/echo`, you can make the Do
 The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
 
 ##Domain Test TLDs
-The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry and Ausregistry, CentralNic, Donuts, RightSide, and Uniregistry.
+The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry and Ausregistry, CentralNic, Donuts, RightSide, and Uniregistry. Registries that are interested in adding TLDs to the program can email the Google Registry at crr-tech@google.com.
 
 domaintest.academy  
 domaintest.actor  
