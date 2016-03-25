@@ -140,6 +140,14 @@ By combining the various parameters of `/stash` and `/echo`, you can make the Do
 
 <http://domaintest.みんな/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less>
 
+##Installation Instructions
+If you are the registry operator of one or more TLDs, and you wish to configure an instance of domaintest for your TLD(s), follow these instructions:
+
+1. Delegate the domain domaintest.yourtld to yourself for every applicable TLD.
+2. Set the domains' nameservers to ns1.google.com, ns2.google.com, ns3.google, and ns4.google.com.
+3. Send an email to crr-tech@google.com with a subject line of "New Domaintest domains" and include a list of all domaintest domains that you just created.
+4. Wait up to a few weeks for the new sites to go live.
+5. (Optionally) Send us a GitHub pull request to add your domains to the listing below.
 
 ##Discussion
 The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
