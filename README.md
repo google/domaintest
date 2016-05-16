@@ -144,30 +144,36 @@ By combining the various parameters of `/stash` and `/echo`, you can make the Do
 If you are the registry operator of one or more TLDs, and you wish to configure an instance of domaintest for your TLD(s), follow these instructions:
 
 1. Delegate the domain domaintest.yourtld to yourself for every applicable TLD.
-2. Set the domains' nameservers to ns1.google.com, ns2.google.com, ns3.google, and ns4.google.com.
+2. Set the domains' nameservers to ns1.google.com, ns2.google.com, ns3.google.com, and ns4.google.com.
 3. Send an email to crr-tech@google.com with a subject line of "New Domaintest domains" and include a list of all domaintest domains that you just created.
 4. Wait up to a few weeks for the new sites to go live.
-5. (Optionally) Send us a GitHub pull request to add your domains to the listing below.
 
 ##Discussion
 The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
 
 ##Domain Test TLDs
-The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry and Ausregistry, CentralNic, Donuts, RightSide, and Uniregistry. Registries that are interested in adding TLDs to the program can email the Google Registry at crr-tech@google.com.
+The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry and Ausregistry, CentralNic, Dominion, Donuts, DotClub, RightSide, The American Bible Society, Top Level Spectrum, and Uniregistry. Registries that are interested in adding TLDs to the program can email the Google Registry at crr-tech@google.com.
 
 domaintest.academy  
 domaintest.actor  
+domaintest.ads  
 domaintest.agency  
 domaintest.airforce  
+domaintest.app  
+domaintest.archi  
 domaintest.army  
 domaintest.associates  
 domaintest.attorney  
 domaintest.auction  
+domaintest.autos  
 domaintest.band  
 domaintest.bar  
 domaintest.bargains  
+domaintest.bible  
 domaintest.bike  
+domaintest.bio  
 domaintest.blackfriday  
+domaintest.boats  
 domaintest.boutique  
 domaintest.builders  
 domaintest.cab  
@@ -218,6 +224,7 @@ domaintest.exchange
 domaintest.expert  
 domaintest.exposed  
 domaintest.fail  
+domaintest.family  
 domaintest.farm  
 domaintest.financial  
 domaintest.fish  
@@ -226,6 +233,7 @@ domaintest.flights
 domaintest.florist  
 domaintest.foo  
 domaintest.forsale  
+domaintest.forum  
 domaintest.foundation  
 domaintest.fund  
 domaintest.furniture  
@@ -240,6 +248,7 @@ domaintest.guru
 domaintest.haus  
 domaintest.holdings  
 domaintest.holiday  
+domaintest.homes  
 domaintest.host  
 domaintest.house  
 domaintest.immobilien  
@@ -256,6 +265,7 @@ domaintest.lighting
 domaintest.limited  
 domaintest.limo  
 domaintest.link  
+domaintest.live  
 domaintest.maison  
 domaintest.management  
 domaintest.market  
@@ -263,18 +273,23 @@ domaintest.marketing
 domaintest.media  
 domaintest.moda  
 domaintest.mortgage  
+domaintest.motorcycles  
 domaintest.navy  
+domaintest.news  
 domaintest.ninja  
+domaintest.page  
 domaintest.partners  
 domaintest.photography  
 domaintest.photos  
 domaintest.pics  
 domaintest.pictures  
+domaintest.pid  
 domaintest.plumbing  
 domaintest.press  
 domaintest.productions  
 domaintest.properties  
 domaintest.pub  
+domaintest.realty  
 domaintest.recipes  
 domaintest.rehab  
 domaintest.reisen  
@@ -286,14 +301,17 @@ domaintest.rest
 domaintest.reviews  
 domaintest.rip  
 domaintest.rocks  
+domaintest.sale  
 domaintest.schule  
 domaintest.services  
 domaintest.shoes  
 domaintest.singles  
+domaintest.ski  
 domaintest.social  
 domaintest.software  
 domaintest.solar  
 domaintest.solutions  
+domaintest.studio  
 domaintest.support  
 domaintest.surgery  
 domaintest.systems  
@@ -310,6 +328,7 @@ domaintest.vacations
 domaintest.ventures  
 domaintest.vet  
 domaintest.viajes  
+domaintest.video  
 domaintest.villas  
 domaintest.vision  
 domaintest.voyage  
@@ -319,8 +338,10 @@ domaintest.wiki
 domaintest.works  
 domaintest.wtf  
 domaintest.xyz  
+domaintest.yachts  
 domaintest.zone  
 domaintest.みんな  
+domaintestclub.club  
 اختبارنطاق.شبكة  
 ##Legal
 Domain Test is an open source project available under the Apache 2 license. Use of the Domain Test service is subject to Google’s Terms of Service and Privacy Policy. [Learn more](https://www.google.com/intl/en/policies/). 
