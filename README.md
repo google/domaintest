@@ -176,6 +176,7 @@ domaintest.blackfriday
 domaintest.boats  
 domaintest.boutique  
 domaintest.builders  
+domaintest.bzh  
 domaintest.cab  
 domaintest.camera  
 domaintest.camp  
