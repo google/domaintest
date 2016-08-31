@@ -34,7 +34,7 @@ The `echo` command instructs the Domain Test service to echo a response based on
   - `mime=<type>` determines the MIME type (default text/plain).
   - `sleep=<seconds>` causes a sleep before the response (default 0 sec, max 10 sec).
   - `header=<name=value>` adds a header to the response.
-  - `setcookie=<name=value>` sets a session-scoped cookie.
+  - `addcookie=<name=value>` sets a session-scoped cookie.
   - `delcookie=<name>` deletes a cookie.
 
 For example, the request below will return the string `echoed-narwhal`.
