@@ -174,7 +174,8 @@ domaintest.bike
 domaintest.bio  
 domaintest.blackfriday  
 domaintest.boats  
-domaintest.boutique  
+domaintest.boutique
+domaintest.build
 domaintest.builders  
 domaintest.bzh  
 domaintest.cab  
