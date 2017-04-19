@@ -1,10 +1,10 @@
-#Domain Test
+# Domain Test
 
 **Note**: In the links throughout this documentation, we use the internationalized domain name `domaintest.みんな`. In links, GitHub improperly encodes this as `domaintest.%E3%81%BF%E3%82%93%E3%81%AA`. Domain names should not be URL-encoded. (This is exactly the type of issue that the Domain Test tool is intended to catch.)
 
 This bug breaks the hyperlinks in this documentation for users of Firefox, Internet Explorer, and Safari; we've reported the issue to GitHub. In the meantime, affected users can test the examples by copying and pasting the on-screen text.
 
-##Overview
+## Overview
 Domain Test is a tool designed to help developers test their applications for compatibility with new top-level domains (TLDs). Developed by Google and launched in a partnership between Google Registry and Ausregistry, CentralNic, Donuts, RightSide, and Uniregistry, Domain Test is an open source project available under the Apache 2 license and can be used across 145 new TLDs. It is freely available for use and modification.
 
 
@@ -14,7 +14,7 @@ This repository contains the documentation and code for Domain Test. For clarity
 
 The Domain Test service runs on AppEngine and is available for any developer to use. The syntax examples in this documentation use the `domaintest.みんな` domain name. However, depending on what type of new TLD you want to test, you can substitute any of the strings in the [Domain Test TLDs](#domain-test-tlds) section of this documentation.
 
-##HTTP Testing API
+## HTTP Testing API
 You can use the HTTP Testing API to construct an HTTP GET or POST request that results in a predictable server response. By observing your application's handling of the server’s response, you can determine whether the application making the HTTP call works properly with new TLDs. 
 
 GET requests should use the following syntax:
@@ -25,7 +25,7 @@ POST requests can mix parameters between the query string, like GET, and the POS
 
 The HTTP Testing API supports Cross-Origin Resource Sharing on all requests, including support for preflight. This means that you can test AJAX requests to new TLDs from JavaScript running on any page.
 
-###ECHO
+### ECHO
 The `echo` command instructs the Domain Test service to echo a response based on the parameters you specify. You can construct an ECHO command with one or more of the parameters below.
 
   - `status=<integer>` determines the status code (default 200).
@@ -49,7 +49,7 @@ The request below will return a 302 redirect to `http://www.example.com/` after 
 
 <http://domaintest.みんな/echo?status=302&sleep=10&payload=http://www.example.com/>
 
-###STASH
+### STASH
 The `stash` command instructs the Domain Test service to stash a response to the parameters specified in the request for later retrieval. It uses the same parameters as the `echo` command. A stashed payload is truncated after 10K.
 
 For example, the request below will stash the string 'stashed-narwhal'.
@@ -62,7 +62,7 @@ The Domain Test service responds to stash requests with a temp URL in the form b
 
 A single temp URL is available for use for 5 minutes after it's been generated, and it can be used once. Note that stashed data is stored in memory and should be considered highly ephemeral. Under some circumstances it may be lost even before the stated expiration time, in which case you should re-stash and try again.
 
-###TOKEN
+### TOKEN
 
 Alternatively, you can use the URL below if you want to pre-generate a token *before* stashing:
 
@@ -74,7 +74,7 @@ If you’ve pre-generated a token prior to stashing a request, you can assign a 
 
 A single pre-generated token can be used an unlimited number of times within one hour of generation.
 
-##Email Testing API
+## Email Testing API
 The Email Testing API allows you to trigger an automatic email response from the Domain Test service, which enables you to determine whether an application’s email stack properly handles new TLDs. You can trigger an autoresponse by sending an email with a subject that begins with the word `Test` to `<local-part>@domaintest.みんな`, where `<local-part>` is any string:
 
 ```
@@ -92,14 +92,14 @@ If the second word of the email subject is a token retrieved from the `/token` e
 
 for 15 minutes and will be retrievable once. You can use this to determine whether an email reached the Domain Test service, even if you do not receive an autoresponse.
 
-##Security Considerations
+## Security Considerations
 By design, the Domain Test service is highly insecure. You should consider any data sent to the service to be public and should not stash or email anything other than test data. It is trivial to execute arbitrary JavaScript within the `domaintest.みんな` origin, both directly via `/echo` and stored via `/stash`, so it is crucial that there not be anything private within the same domain that is worth stealing. For this reason, there is no content on the domains listed below other than the Domain Test service.
 
 You should think carefully before running the service on your own domain, since it opens an XSS vector against any other content on the domain. In addition, since stored XSS attacks can live beyond the lifetime of a stash (for example, by manipulating the HTML5 Application Cache), running the service on a domain name means that the domain name in question will *always* be vulnerable from a security perspective. You should not reuse a domain that is running Domain Test for any non-testing purpose, even in the future.
 
-##Examples
+## Examples
 
-###Testing Client Software
+### Testing Client Software
 
 Suppose you’ve developed an RSS reader and want to know whether it’ll work with feeds that are served off of a new TLD. You can use the HTTP Testing API to craft a URL that returns an RSS feed. Here's an example using GET:
 
@@ -110,7 +110,7 @@ Suppose you’ve developed an RSS reader and want to know whether it’ll work w
 
 You can take this URL and plug it into your app. If your app works properly --- the RSS feed loads and renders the `みんな` TLD --- then you can be reasonably confident that your app properly handles this type of new TLD. If not, you’ve found a bug! 
 
-###Testing Webhooks
+### Testing Webhooks
 
 You can use the `/stash` endpoint to test webhooks. Suppose you are testing a service that posts the weather to a URL of your choosing every few minutes. You can go to the `/token` endpoint on domaintest.みんな and get a token that you can use with `/stash`. Then you give the weather service a URL that looks like this:
 
@@ -122,25 +122,25 @@ This will cause the Domain Test server to save whatever gets POSTed to this URL 
 
 You can then poll this URL until there is something there to see. If the service successfully posted the weather to this new TLD's "webhook" then you will be able to see it. If nothing shows up, even after the weather should have been sent, you've probably found a bug!
 
-###Other Things to Try
+### Other Things to Try
 
 By combining the various parameters of `/stash` and `/echo`, you can make the Domain Test service mimic almost any kind of server. Here are some things to try:
 
-#####Set a cookie using the unicode form of `.みんな` and verify that it's served on the `xn--q9jyb4c` ASCII version too.
+##### Set a cookie using the unicode form of `.みんな` and verify that it's served on the `xn--q9jyb4c` ASCII version too.
 
 <http://domaintest.みんな/echo?addcookie=foo=bar&letyoudown=occasionally>
 
 <http://domaintest.xn--q9jyb4c/echo?payload=%3Cscript%3Ealert(document.cookie)%3C/script%3E&mime=text/html&giveyouup=sometimes>
 
-#####Make the server present an HTTP Basic Auth challenge.
+##### Make the server present an HTTP Basic Auth challenge.
 
 <http://domaintest.みんな/echo?header=WWW-Authenticate=Basic+realm=%22foo%22&status=401&blend=no>
 
-#####Get `echo` to serve a downloadable attachment.
+##### Get `echo` to serve a downloadable attachment.
 
 <http://domaintest.みんな/echo?payload=foo&header=Content-Disposition=attachment&cowbell=less>
 
-##Installation Instructions
+## Installation Instructions
 If you are the registry operator of one or more TLDs, and you wish to configure an instance of domaintest for your TLD(s), follow these instructions:
 
 1. Delegate the domain domaintest.yourtld to yourself for every applicable TLD.
@@ -148,10 +148,10 @@ If you are the registry operator of one or more TLDs, and you wish to configure 
 3. Send an email to crr-tech@google.com with a subject line of "New Domaintest domains" and include a list of all domaintest domains that you just created.
 4. Wait up to a few weeks for the new sites to go live.
 
-##Discussion
+## Discussion
 The discussion forum for this project is hosted on Google Groups: [domain-test@googlegroups.com](https://groups.google.com/forum/#!forum/domain-test).
 
-##Domain Test TLDs
+## Domain Test TLDs
 The Domain Test tool is available on the following TLDs, thanks to a partnership between Google Registry and Ausregistry, CentralNic, Dominion, Donuts, DotClub, RightSide, The American Bible Society, Top Level Spectrum, and Uniregistry. Registries that are interested in adding TLDs to the program can email the Google Registry at crr-tech@google.com.
 
 domaintest.academy  
@@ -345,5 +345,5 @@ domaintest.zone
 domaintest.みんな  
 domaintestclub.club  
 اختبارنطاق.شبكة  
-##Legal
+## Legal
 Domain Test is an open source project available under the Apache 2 license. Use of the Domain Test service is subject to Google’s Terms of Service and Privacy Policy. [Learn more](https://www.google.com/intl/en/policies/). 
