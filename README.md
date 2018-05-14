@@ -74,24 +74,6 @@ If you’ve pre-generated a token prior to stashing a request, you can assign a 
 
 A single pre-generated token can be used an unlimited number of times within one hour of generation.
 
-## Email Testing API
-The Email Testing API allows you to trigger an automatic email response from the Domain Test service, which enables you to determine whether an application’s email stack properly handles new TLDs. You can trigger an autoresponse by sending an email with a subject that begins with the word `Test` to `<local-part>@domaintest.みんな`, where `<local-part>` is any string:
-
-```
-To: narwhal@domaintest.みんな
-Subject: Test ALL the autoresponders! 
-```
-
-The autoresponder will reply with an email from `tester@domaintest.みんな` with the subject `Automated testing service response`. (Although you can send the outbound email to any address at `domaintest.みんな` the autoresponse will always be sent from `tester@domaintest.みんな`.) The autoresponder respects a Reply-To header, if present.
-
-The email testing API is compliant with IDNA2008, but it does not support full email address internationalization as defined in RFCs 6530, 6531, and 6532. 
-
-If the second word of the email subject is a token retrieved from the `/token` endpoint, the headers (but not body) of the incoming email will be stashed at 
-
-`http://domaintest.みんな/temp/<token>`
-
-for 15 minutes and will be retrievable once. You can use this to determine whether an email reached the Domain Test service, even if you do not receive an autoresponse.
-
 ## Security Considerations
 By design, the Domain Test service is highly insecure. You should consider any data sent to the service to be public and should not stash or email anything other than test data. It is trivial to execute arbitrary JavaScript within the `domaintest.みんな` origin, both directly via `/echo` and stored via `/stash`, so it is crucial that there not be anything private within the same domain that is worth stealing. For this reason, there is no content on the domains listed below other than the Domain Test service.
 
