@@ -1,9 +1,5 @@
 # Domain Test
 
-**Note**: In the links throughout this documentation, we use the internationalized domain name `domaintest.みんな`. In links, GitHub improperly encodes this as `domaintest.%E3%81%BF%E3%82%93%E3%81%AA`. Domain names should not be URL-encoded. (This is exactly the type of issue that the Domain Test tool is intended to catch.)
-
-This bug breaks the hyperlinks in this documentation for users of Firefox, Internet Explorer, and Safari; we've reported the issue to GitHub. In the meantime, affected users can test the examples by copying and pasting the on-screen text.
-
 ## Overview
 Domain Test is a tool designed to help developers test their applications for compatibility with new top-level domains (TLDs). Developed by Google and launched in a partnership between Google Registry and Ausregistry, CentralNic, Donuts, RightSide, and Uniregistry, Domain Test is an open source project available under the Apache 2 license and can be used across 145 new TLDs. It is freely available for use and modification.
 
